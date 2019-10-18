@@ -7,28 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" x:Name="_this">
     <Grid>
+       
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
-
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+       <!--
         <Button Grid.Row="1" Grid.Column="1" Content="포스코ICT" Style="{StaticResource logoBtn}"/>
         
         <Button x:Name="_companyInfoBtn" Grid.Row="1" Grid.Column="2" Style="{StaticResource headerBtn}" Content="기업정보"/>
 
-        <ListBox x:Name="_listbox" Grid.Row="2" Grid.Column="2" 
-                 ItemsSource="{Binding ElementName=_this, Path=CompanyInfo}" >
+        <ListBox x:Name="_headerListBox" Grid.Row="2" Grid.Column="2" 
+                 ItemsSource="{Binding ElementName=_this, Path=Header_CompanyInfo}" >
+
             <ListBox.Style>
                 <Style TargetType="{x:Type ListBox}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -39,9 +36,10 @@
                     </Style.Triggers>
                 </Style>
             </ListBox.Style>
+                
         </ListBox>
-
-        <!--Border x:Name="menu" Grid.Row="2" Grid.Column="2" BorderBrush="Gray" BorderThickness="1" >
+        
+        <Border x:Name="menu" Grid.Row="2" Grid.Column="2" BorderBrush="Gray" BorderThickness="1" >
             <Border.Style>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -57,11 +55,35 @@
                 <Button DockPanel.Dock="Top" Content ="1" Style="{StaticResource itemBtn}"/>
                 <Button DockPanel.Dock="Top" Content ="2" Style="{StaticResource itemBtn}"/>
             </StackPanel>
-        </-->
+        </>
     
         <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource headerBtn}" Content="사업분야"/>
         <Button Grid.Row="1" Grid.Column="4" Style="{StaticResource headerBtn}" Content="투자정보"/>
         <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource headerBtn}" Content="PR센터"/>
         <Button Grid.Row="1" Grid.Column="6" Style="{StaticResource headerBtn}" Content="고객지원"/>
+        -->
+        <Menu x:Name="mainMenu" Grid.Row="1" Grid.Column="2" >
+            <MenuItem Header="Posco ICT" Foreground="Blue" Style="{StaticResource logoMenuStyle}"/>
+
+            <MenuItem Header="기업정보" Style="{StaticResource mainMenuStyle}">
+                <MenuItem x:Name="m1" Header="기업개요" Style="{StaticResource subMenuStyle}">
+                    <MenuItem x:Name="item1" Header="기업소개" Style="{StaticResource subMenuStyle}"/>
+                    <MenuItem Header="포스코그룹비전" Style="{StaticResource subMenuStyle}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="사업분야" Style="{StaticResource mainMenuStyle}">
+
+            </MenuItem>
+
+            <MenuItem Header="투자정보" Style="{StaticResource mainMenuStyle}">
+
+            </MenuItem>
+            <MenuItem Header="PR센터" Style="{StaticResource mainMenuStyle}">
+
+            </MenuItem>
+            <MenuItem Header="고객지원" Style="{StaticResource mainMenuStyle}">
+
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

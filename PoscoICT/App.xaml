@@ -5,9 +5,60 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <DataTemplate x:Key="nameItemTemplate">
-            <TextBlock Text="{Binding XPath=@Name}"/>
+            <Label Content="{Binding XPath=@Name}"/>
         </DataTemplate>
-        
+
+        <Style TargetType="{x:Type Menu}" >
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style TargetType="{x:Type MenuItem}" x:Key="logoMenuStyle">
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <StackPanel>
+                            <ContentPresenter x:Name="presenter" ContentSource="Header"
+                                                          HorizontalAlignment="Center"/>
+                            <Border x:Name="_menuBorder" BorderBrush="#FF1158B1" BorderThickness="2" Visibility="Collapsed"
+                                    Width="{Binding ElementName=presenter, Path=ActualWidth}"/>
+                        </StackPanel>
+                        
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+     
+        <Style TargetType="MenuItem" x:Key="mainMenuStyle">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <StackPanel>
+                            <ContentPresenter x:Name="presenter" ContentSource="Header"
+                                                          HorizontalAlignment="Center"/>
+                            <Border x:Name="_menuBorder" BorderBrush="#FF1158B1" BorderThickness="2" Visibility="Collapsed"
+                                    Width="{Binding ElementName=presenter, Path=ActualWidth}"/>
+                        </StackPanel>
+                        
+                    </ControlTemplate>
+                    
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type MenuItem}" x:Key="subMenuStyle">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            
+        </Style>
         <Style TargetType="Button" x:Key="logoBtn">
             <Setter Property="Foreground" Value="#FF1158B1"/>
             <Setter Property="Background" Value="White"/>
@@ -19,29 +70,27 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Style.Triggers>
-                <Trigger Property="Button.IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="Blue"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                                    <Grid>
-                                        <Rectangle x:Name="under" Width="40" Height="5" Stretch="Fill" Fill="#FF1158B1"/>
-                                        <ContentPresenter x:Name="myContentPresenter" Content="{TemplateBinding Content}"
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <StackPanel>
+                            <ContentPresenter x:Name="myContentPresenter" Content="{TemplateBinding Content}"
                                                           HorizontalAlignment="Center"/>
-                                    </Grid>
-                                </Border>
-                                <!--
-                                <TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>
-                                -->
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Trigger>
-            </Style.Triggers>
+                            <Border x:Name="_border" BorderBrush="#FF1158B1" BorderThickness="2" Visibility="Collapsed"
+                                    Width="{Binding ElementName=myContentPresenter, Path=ActualWidth}"/>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue"/>
+                                <Setter TargetName="_border" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
-
+        
+        
         <Style TargetType="Button" x:Key="itemBtn">
             <Setter Property="Width" Value="80"/>
             <Setter Property="Height" Value="20"/>

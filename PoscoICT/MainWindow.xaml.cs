@@ -20,31 +20,44 @@ namespace PoscoICT
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<string> _companyInfo;
-        private List<string> _bizArea;
-        private List<string> _investInfo;
-        private List<string> _prCenter;
-        private List<string> _customerService;
+        private List<List<string>> _companyInfo;
+        private List<List<string>> _bizArea;
+        private List<List<string>> _investInfo;
+        private List<List<string>> _prCenter;
+        private List<List<string>> _customerService;
 
-        public List<string> CompanyInfo
+        public List<string> Header_CompanyInfo
         {
-            get { return _companyInfo; }
+            get { return GetColumn(_companyInfo, 0).ToList(); }
         }
+        //public List<string> Item_CompanyInfo
+        //{
+        //    get { return }
+        //}
+
         public List<string> BizArea
         {
-            get { return _bizArea; }
+            get { return GetColumn(_bizArea, 0).ToList(); }
         }
         public List<string> InvestInfo
         {
-            get { return _investInfo; }
+            get { return GetColumn(_investInfo, 0).ToList(); }
         }
         public List<string> PRCenter
         {
-            get { return _prCenter; }
+            get { return GetColumn(_prCenter, 0).ToList(); }
         }
         public List<string> CustomerService
         {
-            get { return _customerService; }
+            get { return GetColumn(_customerService, 0).ToList(); }
+        }
+
+        public static IEnumerable<string> GetColumn(List<List<string>> data, int columnIndex)
+        {
+            foreach(List<string> row in data)
+            {
+                yield return row[columnIndex];
+            }
         }
 
         public MainWindow()
@@ -55,15 +68,25 @@ namespace PoscoICT
 
         private void InitValue()
         {
-            _companyInfo = new List<string>();
-            _companyInfo.Add("기업개요");
-            _companyInfo.Add("CEO");
-            _companyInfo.Add("행복경영");
-            _companyInfo.Add("지속가능경영");
-            _companyInfo.Add("창의경영");
-
-
+            InitCompanyInfo();
         }
-        
+        private void InitCompanyInfo()
+        {
+            _companyInfo = new List<List<string>>
+            {
+                new List<string> { "기업개요", "기업소개", "포스코그룹 비전" },
+                new List<string> { "CEO" },
+                new List<string> { "행복경영", "감사나눔", "사회공헌" },
+                new List<string> { "지속가능경영", "윤리경영", "동반성장", "공정거래", "전략물자" },
+                new List<string> { "창의경영"}
+            };
+            //_companyInfo.Add("기업개요");
+            //_companyInfo.Add("CEO");
+            //_companyInfo.Add("행복경영");
+            //_companyInfo.Add("지속가능경영");
+            //_companyInfo.Add("창의경영");
+            
+        }
+       
     }
 }
