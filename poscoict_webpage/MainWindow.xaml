@@ -1,0 +1,23 @@
+﻿<Window x:Class="poscoict_webpage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:poscoict_webpage"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu>
+            <MenuItem Header="topHeader1" Width="100" Height="30">
+                <MenuItem Header="subHeader1">
+                    <MenuItem Header="subItem1"/>
+                </MenuItem>
+                <MenuItem Header="subHeader2">
+                    <MenuItem Header="subItem2"/>
+                </MenuItem>
+                <MenuItem Header="subItem3"/>
+            </MenuItem>
+            <MenuItem Header="topItem1"/>
+        </Menu>
+    </Grid>
+</Window>
