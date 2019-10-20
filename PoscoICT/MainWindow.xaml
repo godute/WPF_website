@@ -65,16 +65,24 @@
         <Menu x:Name="mainMenu" Grid.Row="1" Grid.Column="2" >
             <MenuItem Header="Posco ICT" Foreground="Blue" Style="{StaticResource logoMenuStyle}"/>
 
+<<<<<<< HEAD
             <MenuItem x:Name ="compInfo" Header="기업정보" Style="{StaticResource mainMenuStyle}">
                
                 
+=======
+            <MenuItem Header="기업정보" Style="{StaticResource mainMenuStyle}">
+>>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
                 <MenuItem x:Name="m1" Header="기업개요" Style="{StaticResource subMenuStyle}">
                     <MenuItem x:Name="item1" Header="기업소개" Style="{StaticResource subMenuStyle}"/>
                     <MenuItem Header="포스코그룹비전" Style="{StaticResource subMenuStyle}"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="사업분야" Style="{StaticResource mainMenuStyle}">
+<<<<<<< HEAD
                 <MenuItem x:Name="item2" Header="기업소개" Style="{StaticResource subMenuStyle}"/>
+=======
+
+>>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
             </MenuItem>
 
             <MenuItem Header="투자정보" Style="{StaticResource mainMenuStyle}">

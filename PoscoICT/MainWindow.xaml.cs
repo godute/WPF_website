@@ -87,6 +87,7 @@ namespace PoscoICT
             //_companyInfo.Add("창의경영");
             
         }
+<<<<<<< HEAD
 
         private void Item1_SubmenuOpened(object sender, RoutedEventArgs e)
         {
@@ -99,5 +100,8 @@ namespace PoscoICT
             MenuItem item = (MenuItem)sender;
             item.IsSubmenuOpen = true;
         }
+=======
+       
+>>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
     }
 }
