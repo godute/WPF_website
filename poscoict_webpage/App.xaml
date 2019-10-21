@@ -4,11 +4,9 @@
              xmlns:local="clr-namespace:poscoict_webpage"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
         <ControlTemplate x:Key="{x:Static MenuItem.TopLevelHeaderTemplateKey}" TargetType="{x:Type MenuItem}">
-            <Grid Name="_grid">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <StackPanel Name="_stack">
                 <ContentPresenter Name="_topHeaderPresenter" ContentSource="Header" HorizontalAlignment="Center"
                                       RecognizesAccessKey="True"/>
                         
@@ -21,6 +19,7 @@
                            Placement="Bottom"
                            IsOpen="{TemplateBinding IsSubmenuOpen}"
                            PopupAnimation="Fade"
+                               PlacementTarget="{Binding ElementName=_border}"
                            Focusable="False">
 
                             <StackPanel
@@ -29,10 +28,8 @@
                             Background="White"
                            IsItemsHost="True"/>
                         </Popup>
-
-
                 
-            </Grid>
+            </StackPanel>
             <ControlTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter TargetName="_topHeaderPresenter" Property="TextBlock.Foreground" Value="Blue"/>
@@ -85,7 +82,10 @@
                 </Grid>
             </Border>
         </ControlTemplate>
-        
+        <Style x:Key="{x:Type Menu}" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="White"/>
+            
+        </Style>
         <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Style.Triggers>

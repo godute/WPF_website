@@ -62,27 +62,20 @@
         <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource headerBtn}" Content="PR센터"/>
         <Button Grid.Row="1" Grid.Column="6" Style="{StaticResource headerBtn}" Content="고객지원"/>
         -->
+        
         <Menu x:Name="mainMenu" Grid.Row="1" Grid.Column="2" >
             <MenuItem Header="Posco ICT" Foreground="Blue" Style="{StaticResource logoMenuStyle}"/>
+            <MenuItem x:Name ="compInfo" Header="기업정보" Style="{StaticResource mainMenuStyle}"/>
 
-<<<<<<< HEAD
-            <MenuItem x:Name ="compInfo" Header="기업정보" Style="{StaticResource mainMenuStyle}">
-               
-                
-=======
             <MenuItem Header="기업정보" Style="{StaticResource mainMenuStyle}">
->>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
                 <MenuItem x:Name="m1" Header="기업개요" Style="{StaticResource subMenuStyle}">
                     <MenuItem x:Name="item1" Header="기업소개" Style="{StaticResource subMenuStyle}"/>
                     <MenuItem Header="포스코그룹비전" Style="{StaticResource subMenuStyle}"/>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="사업분야" Style="{StaticResource mainMenuStyle}">
-<<<<<<< HEAD
                 <MenuItem x:Name="item2" Header="기업소개" Style="{StaticResource subMenuStyle}"/>
-=======
 
->>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
             </MenuItem>
 
             <MenuItem Header="투자정보" Style="{StaticResource mainMenuStyle}">

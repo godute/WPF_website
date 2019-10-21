@@ -10,10 +10,7 @@
 
         <Style TargetType="{x:Type Menu}" >
             <Setter Property="Background" Value="White"/>
-<<<<<<< HEAD
-            
-=======
->>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
+
         </Style>
         <Style TargetType="{x:Type MenuItem}" x:Key="logoMenuStyle">
             <Setter Property="Foreground" Value="Blue"/>
@@ -36,25 +33,20 @@
             </Setter>
         </Style>
      
-<<<<<<< HEAD
         <Style TargetType="{x:Type MenuItem}" x:Key="mainMenuStyle" x:Name="ss">
             <!--Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="IsSubmenuOpen" Value="True"/>
                 </Trigger>
             </-->
-=======
+
         <Style TargetType="MenuItem" x:Key="mainMenuStyle">
->>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="Width" Value="100"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="BorderThickness" Value="0"/>
-<<<<<<< HEAD
 
-=======
->>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type MenuItem}">
@@ -63,7 +55,6 @@
                                                           HorizontalAlignment="Center"/>
                             <Border x:Name="_menuBorder" BorderBrush="#FF1158B1" BorderThickness="2" Visibility="Collapsed"
                                     Width="{Binding ElementName=presenter, Path=ActualWidth}"/>
-<<<<<<< HEAD
                             <Popup Name="_mainPopup" Placement="Bottom"
                                    IsOpen="{TemplateBinding IsSubmenuOpen}">
                                 <StackPanel IsItemsHost="True">
@@ -84,14 +75,12 @@
                 </Setter.Value>
             </Setter>
 
-=======
                         </StackPanel>
                         
                     </ControlTemplate>
                     
                 </Setter.Value>
             </Setter>
->>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
         </Style>
 
         <Style TargetType="{x:Type MenuItem}" x:Key="subMenuStyle">

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-﻿#pragma checksum "..\..\MainWindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "E468520DFA9233B410C59E26369398D9BDD9E6C0"
+#pragma checksum "..\..\MainWindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "E468520DFA9233B410C59E26369398D9BDD9E6C0"
 =======
 ﻿#pragma checksum "..\..\MainWindow.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "E90E5356168F2B97AFBC96C23722AE4447BE6008"
 >>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
@@ -36,122 +36,122 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace PoscoICT {
-    
-    
+namespace PoscoICT
+{
+
+
     /// <summary>
     /// MainWindow
     /// </summary>
-    public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
-        
-        
-        #line 8 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal PoscoICT.MainWindow _this;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 65 "..\..\MainWindow.xaml"
+    public partial class MainWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector
+    {
+
+#line default
+#line hidden
+
+
+#line 65 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Menu mainMenu;
-        
-        #line default
-        #line hidden
-        
-        
+
+#line default
+#line hidden
+
+
 <<<<<<< HEAD
-        #line 68 "..\..\MainWindow.xaml"
+#line 68 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem compInfo;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 71 "..\..\MainWindow.xaml"
+
+#line default
+#line hidden
+
+
+#line 71 "..\..\MainWindow.xaml"
 =======
         #line 69 "..\..\MainWindow.xaml"
 >>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem m1;
-        
-        #line default
-        #line hidden
-        
-        
+
+#line default
+#line hidden
+
+
 <<<<<<< HEAD
-        #line 72 "..\..\MainWindow.xaml"
+#line 72 "..\..\MainWindow.xaml"
 =======
         #line 70 "..\..\MainWindow.xaml"
 >>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem item1;
-        
-        #line default
-        #line hidden
-        
+
+#line default
+#line hidden
+
 <<<<<<< HEAD
-        
-        #line 77 "..\..\MainWindow.xaml"
+
+#line 77 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem item2;
-        
-        #line default
-        #line hidden
-        
+
+#line default
+#line hidden
+
 =======
 >>>>>>> 74c58c697f75900c30484d0732c4d4c1643a6b43
         private bool _contentLoaded;
-        
+
         /// <summary>
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
-        public void InitializeComponent() {
-            if (_contentLoaded) {
+        public void InitializeComponent()
+        {
+            if (_contentLoaded)
+            {
                 return;
             }
             _contentLoaded = true;
             System.Uri resourceLocater = new System.Uri("/PoscoICT;component/mainwindow.xaml", System.UriKind.Relative);
-            
-            #line 1 "..\..\MainWindow.xaml"
+
+#line 1 "..\..\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
-            
-            #line default
-            #line hidden
+
+#line default
+#line hidden
         }
-        
+
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+        void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target)
+        {
             switch (connectionId)
             {
-            case 1:
-            this._this = ((PoscoICT.MainWindow)(target));
-            return;
-            case 2:
-            this.mainMenu = ((System.Windows.Controls.Menu)(target));
-            return;
-            case 3:
+                case 1:
+                    this._this = ((PoscoICT.MainWindow)(target));
+                    return;
+                case 2:
+                    this.mainMenu = ((System.Windows.Controls.Menu)(target));
+                    return;
+                case 3:
 <<<<<<< HEAD
-            this.compInfo = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 4:
-            this.m1 = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 5:
-            this.item1 = ((System.Windows.Controls.MenuItem)(target));
-            return;
-            case 6:
-            this.item2 = ((System.Windows.Controls.MenuItem)(target));
-            return;
+                    this.compInfo = ((System.Windows.Controls.MenuItem)(target));
+                    return;
+                case 4:
+                    this.m1 = ((System.Windows.Controls.MenuItem)(target));
+                    return;
+                case 5:
+                    this.item1 = ((System.Windows.Controls.MenuItem)(target));
+                    return;
+                case 6:
+                    this.item2 = ((System.Windows.Controls.MenuItem)(target));
+                    return;
 =======
             this.m1 = ((System.Windows.Controls.MenuItem)(target));
             return;
@@ -162,6 +162,8 @@ namespace PoscoICT {
             }
             this._contentLoaded = true;
         }
+
+        internal System.Windows.Window _this;
     }
 }
 
