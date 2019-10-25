@@ -1,0 +1,143 @@
+﻿<Application x:Class="poscoict_webpage.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:poscoict_webpage"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ControlTemplate x:Key="{x:Static MenuItem.TopLevelHeaderTemplateKey}" TargetType="{x:Type MenuItem}">
+            <StackPanel Name="_stack">
+                <ContentPresenter Name="_topHeaderPresenter" ContentSource="Header" HorizontalAlignment="Center"
+                                      RecognizesAccessKey="True"/>
+
+                <Rectangle Name="_border" Visibility="Collapsed" Height="4" Fill="Blue"
+                               Width="{Binding ElementName=_topHeaderPresenter, Path=ActualWidth}"/>
+                <Rectangle Name="_temp" Visibility="Visible" Height="6" Fill="White"/>
+                <Popup Name="_topHeaderPopup"
+                           Placement="Bottom"
+                           IsOpen="{TemplateBinding IsSubmenuOpen}"
+                           PopupAnimation="None"
+                               PlacementTarget="{Binding ElementName=_temp}"
+                           Focusable="False">
+
+                    <Border Name="popupBorder" BorderBrush="Black" BorderThickness="1">
+                        <StackPanel
+                           Name="_subBorder"
+                            SnapsToDevicePixels="True"
+                            Background="White"
+                           IsItemsHost="True"/>
+                    </Border>
+                </Popup>
+
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="_topHeaderPresenter" Property="TextBlock.Foreground" Value="Blue"/>
+                    <Setter Property="Foreground" Value="Blue"/>
+                    <Setter TargetName="_border" Property="Visibility" Value="Visible"/>
+                    <Setter TargetName="_topHeaderPopup" Property="IsOpen" Value="True"/>
+                </Trigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="{x:Static MenuItem.TopLevelItemTemplateKey}" TargetType="{x:Type MenuItem}">
+            <Border Name="_topItemBorder">
+                <Grid>
+                    <ContentPresenter ContentSource="Header"/>
+
+                </Grid>
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="{x:Static MenuItem.SubmenuHeaderTemplateKey}" TargetType="{x:Type MenuItem}">
+            <Border Name="_subHeaderBorder" Width="120" Height="20" >
+                <StackPanel Width="120" Height="20">
+                    <DockPanel  Width="120" Height="20" LastChildFill="True">
+                        <ContentPresenter DockPanel.Dock="Left" Name="_subHeaderPresenter" ContentSource="Header"/>
+                        <Ellipse DockPanel.Dock ="Right" Name="circle" Fill="Blue" Visibility="Visible" Width="10" Height="10"/>
+                        <Rectangle Name = "_tempRect" Fill="White"/>
+                    </DockPanel>
+                    <Popup Name="_subHeaderPopup"
+                       Placement="Right"
+                       IsOpen="{TemplateBinding IsSubmenuOpen}">
+                        <Border Name="popupBorder" BorderBrush="Black" BorderThickness="1">
+                            <StackPanel
+                            Name="_subBorder"
+                            SnapsToDevicePixels="True"
+                            Background="White"
+                            IsItemsHost="True"/>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="_subHeaderPopup" Property="IsOpen" Value="True"/>
+                    <Setter TargetName="_subHeaderPresenter" Property="TextBlock.Foreground" Value="White"/>
+                    <Setter TargetName="_subHeaderBorder" Property="Background" Value="Blue"/>
+                    <Setter TargetName="_tempRect" Property="Fill" Value="White"/>
+                    
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="{x:Static MenuItem.SubmenuItemTemplateKey}" 
+                         TargetType="{x:Type MenuItem}">
+            <Border Name="_submenuItemBorder">
+                <Grid>
+                    <ContentPresenter ContentSource="Header"/>
+
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        
+        <!-- Image ControlTemplate -->
+        <ControlTemplate TargetType="{x:Type Button}" x:Key="_imageTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ContentPresenter ContentSource="Source"/>
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="{x:Type Menu}" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="White"/>
+
+        </Style>
+        <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="Role" Value="TopLevelHeader">
+                    <Setter Property="Template" Value="{StaticResource {x:Static MenuItem.TopLevelHeaderTemplateKey}}"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Height" Value="30"/>
+                </Trigger>
+                <Trigger Property="Role" Value="TopLevelItem">
+                    <Setter Property="Template" Value="{StaticResource {x:Static MenuItem.TopLevelItemTemplateKey}}"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Height" Value="30"/>
+                </Trigger>
+                <Trigger Property="Role" Value="SubmenuHeader">
+                    <Setter Property="Template" Value="{StaticResource {x:Static MenuItem.SubmenuHeaderTemplateKey}}"/>
+                    <Setter Property="Width" Value="120"/>
+                    <Setter Property="Height" Value="20"/>
+                </Trigger>
+                <Trigger Property="Role" Value="SubmenuItem">
+                    <Setter Property="Template" Value="{StaticResource {x:Static MenuItem.SubmenuItemTemplateKey}}"/>
+                    <Setter Property="Width" Value="120"/>
+                    <Setter Property="Height" Value="20"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <ControlTemplate x:Key="{}">
+            
+        </ControlTemplate>
+    </Application.Resources>
+</Application>

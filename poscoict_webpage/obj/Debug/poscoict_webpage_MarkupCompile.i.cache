@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\
+C:\Users\Administrator\source\repos\PoscoICT\poscoict_webpage\obj\Debug\
 poscoict_webpage
 none
 false
 DEBUG;TRACE
-C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\App.xaml
-11151548125
+C:\Users\Administrator\source\repos\PoscoICT\poscoict_webpage\App.xaml
+7-306321097
 
-9-415996015
+16-2002141825
 13-1662647192
-MainWindow.xaml;
+MainWindow.xaml;Pages\CEOPage.xaml;Pages\CompanyInfoPage.xaml;Pages\CompanyIntroPage.xaml;Pages\GroupVisionPage.xaml;Pages\HappyBizPage.xaml;Pages\MainPage.xaml;
 
 True
 

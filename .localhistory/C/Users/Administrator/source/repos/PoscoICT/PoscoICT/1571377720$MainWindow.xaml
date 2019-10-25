@@ -1,0 +1,82 @@
+﻿<Window x:Class="PoscoICT.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PoscoICT"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" x:Name="_this">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="1" Grid.Column="1" Content="포스코ICT" Style="{StaticResource logoBtn}"/>
+        
+        <Button x:Name="_companyInfoBtn" Grid.Row="1" Grid.Column="2" Style="{StaticResource headerBtn}" Content="기업정보"/>
+
+        <ListBox x:Name="_headerListBox" Grid.Row="2" Grid.Column="2" 
+                 ItemsSource="{Binding ElementName=_this, Path=Header_CompanyInfo}" >
+            <ListBox.Style>
+                <Style TargetType="{x:Type ListBox}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            
+                            <ControlTemplate TargetType="ListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=_companyInfoBtn, Path=IsMouseOver}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        
+                        
+                    </Style.Triggers>
+                    
+                </Style>
+            </ListBox.Style>
+                
+        </ListBox>
+
+        <!--Border x:Name="menu" Grid.Row="2" Grid.Column="2" BorderBrush="Gray" BorderThickness="1" >
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=_button1, Path=IsMouseOver}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <StackPanel Orientation="Vertical">
+                <Button DockPanel.Dock="Top" Content ="1" Style="{StaticResource itemBtn}"/>
+                <Button DockPanel.Dock="Top" Content ="2" Style="{StaticResource itemBtn}"/>
+            </StackPanel>
+        </-->
+    
+        <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource headerBtn}" Content="사업분야"/>
+        <Button Grid.Row="1" Grid.Column="4" Style="{StaticResource headerBtn}" Content="투자정보"/>
+        <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource headerBtn}" Content="PR센터"/>
+        <Button Grid.Row="1" Grid.Column="6" Style="{StaticResource headerBtn}" Content="고객지원"/>
+    </Grid>
+</Window>

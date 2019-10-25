@@ -1,0 +1,71 @@
+﻿<Window x:Class="poscoict_webpage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:poscoict_webpage"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Image x:Key="img" Source="Resources/cat.jfif"/>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <Rectangle Fill="#FF1B1717" Height="20"/>
+        <Menu>
+            <MenuItem Header="기업정보" Width="100" Height="30">
+                <MenuItem Header="기업개요">
+                    <MenuItem Header="기업소개"/>
+                    <MenuItem Header="포스코그룹 비전"/>
+                </MenuItem>
+                <MenuItem Header="CEO"/>
+                <MenuItem Header="행복경영">
+                    <MenuItem Header="감사나눔"/>
+                    <MenuItem Header="사회공헌"/>
+                </MenuItem>
+                <MenuItem Header="지속가능경영">
+                    <MenuItem Header="윤리경영"/>
+                    <MenuItem Header="동반성장"/>
+                    <MenuItem Header="공정거래"/>
+                    <MenuItem Header="전략물자"/>
+                </MenuItem>
+                <MenuItem Header="창의경영"/>
+            </MenuItem>
+
+            <MenuItem Header="사업분야">
+                <MenuItem Header="Smart X">
+                    <MenuItem Header="OverView"/>
+                    <MenuItem Header="Smart Factory"/>
+                    <MenuItem Header="Smart Energy"/>
+                    <MenuItem Header="Smart Construction"/>
+                    <MenuItem Header="Smart Management"/>
+                </MenuItem>
+                <MenuItem Header="IT Service">
+                    <MenuItem Header="OverView"/>
+                    <MenuItem Header="시스템 구축"/>
+                    <MenuItem Header="인프라 운영"/>
+                    <MenuItem Header="Cloud"/>
+                    <MenuItem Header="Security"/>
+                </MenuItem>
+                <MenuItem Header="Energy">
+                    <MenuItem Header="OverView"/>
+                    <MenuItem Header="에너지효율화 DR"/>
+                    <MenuItem Header="마이크로그리드"/>
+                    <MenuItem Header="전기차 충전인프라"/>
+                    <MenuItem Header="신재생발전"/>
+                </MenuItem>
+                <MenuItem Header="SOC">
+                    <MenuItem Header="OverView"/>
+                    <MenuItem Header="빌딩"/>
+                    <MenuItem Header="시티"/>
+                    <MenuItem Header="공항"/>
+                    <MenuItem Header="교통"/>
+                </MenuItem>
+            </MenuItem>
+            
+        </Menu>
+        <Border BorderBrush="White" BorderThickness="4"/>
+        <Border BorderBrush="Gray" BorderThickness="1"/>
+        <Border BorderBrush="White" BorderThickness="4"/>
+        <Frame Name="frame" Source="Pages/MainPage.xaml" NavigationUIVisibility="Hidden"/>
+    </StackPanel>
+</Window>
