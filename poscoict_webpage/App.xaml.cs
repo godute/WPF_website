@@ -49,5 +49,37 @@ namespace poscoict_webpage
             mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        private void _itemRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton checked_button = sender as RadioButton;
+            string item = checked_button.Content.ToString();
+            Debug.WriteLine(item);
+            if (item == null)
+            {
+                return;
+            }
+
+            Page page = null;
+            switch (item)
+            {
+                case "기업개요":
+                    page = mainWindow._companyIntroPage;
+                    break;
+                case "기업소개":
+                    page = mainWindow._companyInfoPage;
+                    break;
+                case "CEO":
+                    page = mainWindow._ceoPage;
+                    break;
+                case "행복경영":
+                    page = mainWindow._happyBizPage;
+                    break;
+                case "포스코그룹비전":
+                    page = mainWindow._groupvisionPage;
+                    break;
+            }
+            mainWindow.frame.Navigate(page);
+        }
     }
 }

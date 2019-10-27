@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Release\
 poscoict_webpage
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\App.xaml
 7-306321097
 
@@ -16,5 +16,5 @@ C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\Ap
 13-1662647192
 MainWindow.xaml;Pages\CEOPage.xaml;Pages\CompanyInfoPage.xaml;Pages\CompanyIntroPage.xaml;Pages\GroupVisionPage.xaml;Pages\HappyBizPage.xaml;Pages\MainPage.xaml;
 
-False
+True
 

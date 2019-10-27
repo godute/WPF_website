@@ -14,6 +14,12 @@ namespace poscoict_webpage
             get { return _subItemName; }
             set { _subItemName = value; }
         }
+        private bool _isDefault;
+        public bool IsDefault
+        {
+            get { return _isDefault; }
+            set { _isDefault = value; }
+        }
         
     }
     public class SubHeader
@@ -36,7 +42,12 @@ namespace poscoict_webpage
             get { return _subItems == null ? "DarkBlue" : "White"; }
             set { _hasSubitem = value; }
         }
-
+        private bool _isDefault;
+        public bool IsDefault
+        {
+            get { return _isDefault; }
+            set { _isDefault = value; }
+        }
     }
     public class Item
     {

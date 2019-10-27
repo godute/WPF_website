@@ -137,7 +137,8 @@
             </Style.Triggers>
         </Style>
 
-        <Style TargetType="{x:Type ToggleButton}">
+        <!-- RadioButton Style -->
+        <Style x:Key="LeftRadioStyle" TargetType="{x:Type RadioButton}">
             <Setter Property="Content" Value="Text"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="20"/>
@@ -147,10 +148,10 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="Opacity" Value="1"/>
-            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ToggleButton_PreviewMouseLeftButtonDown"/>
+            <!--EventSetter Event="PreviewMouseLeftButtonDown" Handler="ToggleButton_PreviewMouseLeftButtonDown"/-->
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
                         <StackPanel>
                             <Grid Background="{TemplateBinding Background}" >
 
@@ -171,7 +172,7 @@
                             <Border BorderBrush="DarkGray" BorderThickness="1"/>
                         </StackPanel>
                         <ControlTemplate.Triggers>
-                            
+
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="DarkBlue"/>
                                 <Setter Property="Foreground" Value="White"/>
@@ -183,18 +184,41 @@
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
-                
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="Opacity" Value="0.5"/>
                     <Setter Property="Background" Value="DarkBlue"/>
                     <Setter Property="Foreground" Value="White"/>
                     <Setter Property="Visibility" Value="Visible"/>
                 </Trigger>
-                
+
             </Style.Triggers>
+        </Style>
+
+        <!-- Item Radiobutton style -->
+        <Style x:Key="_itemRadioStyle" TargetType="{x:Type RadioButton}">
+            <Setter Property="Content" Value="Text"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Grid>
+                            <ContentPresenter Margin="10,0,0,0" Name="_presenter" Content="{TemplateBinding Content}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="_presenter" Property="TextBlock.Foreground" Value="DarkBlue"/>
+                                <Setter TargetName="_presenter" Property="TextBlock.TextDecorations" Value="Underline"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
         
         <Style x:Key="_leftListItemStyle" TargetType="{x:Type ListViewItem}">
@@ -209,32 +233,44 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Border Name ="border"
-                                    VerticalAlignment="Stretch" 
-                                    HorizontalAlignment="Stretch" 
-                                    Height="30" Background="White">
-                                <ToggleButton Name="toggleBtn" Content="{Binding SubHeaderName}" 
-                                              Tag="{Binding HasSubitem}" IsChecked="{TemplateBinding IsSelected}"/>
-                            </Border>
-                            <Border Background="Transparent"/>
+                            <!--ToggleButton Name="toggleBtn" Content="{Binding SubHeaderName}" 
+                                              Tag="{Binding HasSubitem}" IsChecked="{TemplateBinding IsSelected}"/-->
+                            <RadioButton Name="radio" GroupName="leftMenu" Content="{Binding SubHeaderName}"
+                                         Tag="{Binding HasSubitem}" Style="{StaticResource LeftRadioStyle}"
+                                         IsChecked="{Binding IsDefault}"
+                                         Checked="_itemRadio_Checked"/>
+                            
                             <ItemsControl Grid.Row="1" ItemsSource="{Binding SubItems}" Name="subView" Visibility="Collapsed">
                                 <ItemsControl.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
-                                            <TextBlock Text="{Binding SubItemName}" FontSize="15" Foreground="Black"/>
+                                            <RadioButton Name="_itemRadio" GroupName="subMenus" 
+                                                         IsChecked="{Binding IsDefault}"
+                                                         Style="{StaticResource _itemRadioStyle}"
+                                                         Checked="_itemRadio_Checked" 
+                                                         Content="{Binding SubItemName}"
+                                                         />
                                         </Grid>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=_itemRadio,Path=IsMouseOver}">
+                                                <Setter TargetName="_itemRadio" Property="Foreground" Value="DarkBlue"/>
+                                                <Setter TargetName="_itemRadio" Property="TextBlock.TextDecorations" Value="Underline"/>
+
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
                                     </DataTemplate>
+                                   
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=toggleBtn, Path=IsChecked}" Value="True">
+                            <DataTrigger Binding="{Binding ElementName=radio, Path=IsChecked}" Value="True">
                                 <Setter TargetName="subView" Property="Visibility" Value="Visible"/>
-                                <Setter TargetName="border" Property="Background" Value="DarkBlue"/>
                             </DataTrigger>
                             <DataTrigger Binding="{Binding SubItems}" Value="{x:Null}">
                                 <Setter TargetName="subView" Property="Visibility" Value="Collapsed"/>
                             </DataTrigger>
+                            
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>

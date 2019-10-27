@@ -42,3 +42,15 @@ C:\Users\Administrator\source\repos\PoscoICT\poscoict_webpage\obj\Debug\poscoict
 C:\Users\Administrator\source\repos\PoscoICT\poscoict_webpage\obj\Debug\poscoict_webpage.exe
 C:\Users\Administrator\source\repos\PoscoICT\poscoict_webpage\obj\Debug\poscoict_webpage.pdb
 C:\Users\Administrator\source\repos\PoscoICT\poscoict_webpage\obj\Debug\poscoict_webpage.csprojAssemblyReference.cache
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\CEOPage.g.cs
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\CompanyInfoPage.g.cs
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\CompanyIntroPage.g.cs
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\GroupVisionPage.g.cs
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\HappyBizPage.g.cs
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\MainPage.g.cs
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\CEOPage.baml
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\CompanyInfoPage.baml
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\CompanyIntroPage.baml
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\GroupVisionPage.baml
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\HappyBizPage.baml
+C:\Users\wjddn\Desktop\WPF_website-master\WPF_website-master\poscoict_webpage\obj\Debug\Pages\MainPage.baml
