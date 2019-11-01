@@ -7,8 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="GroupVisionPage">
+    <StackPanel>
 
-    <Grid>
         <Label>포스코그룹 비전</Label>
-    </Grid>
+        <Button HorizontalAlignment="Left"
+            Style="{StaticResource imgBtnStyle}">
+            <Image Source="pack://application:,,,/Resources/cat.jfif"/>
+        </Button>
+    </StackPanel>
 </Page>
